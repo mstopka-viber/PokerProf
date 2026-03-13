@@ -11,14 +11,14 @@ interface TooltipData {
 
 const positions = [
   { label: "UTG",   description: "Under the Gun - First player to act preflop. Worst position, play only premium hands.",             color: "#dc2626", x: 14, y: 50 },
-  { label: "UTG+1", description: "Under the Gun +1 - Second player to act preflop. Early position, play tight.",                     color: "#dc2626", x: 25, y: 24 },
-  { label: "MP",    description: "Middle Position - Third player to act preflop. Can open wider than early position.",                color: "#eab308", x: 38, y: 13 },
-  { label: "MP+1",  description: "Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP.",            color: "#eab308", x: 57, y: 13 },
-  { label: "HJ",    description: "Hijack - Fifth player to act preflop. Late position, can steal blinds more often.",                color: "#3b82f6", x: 70, y: 24 },
+  { label: "UTG+1", description: "Under the Gun +1 - Second player to act preflop. Early position, play tight.",                     color: "#dc2626", x: 22, y: 30 },
+  { label: "MP",    description: "Middle Position - Third player to act preflop. Can open wider than early position.",                color: "#eab308", x: 37, y: 18 },
+  { label: "MP+1",  description: "Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP.",            color: "#eab308", x: 57, y: 18 },
+  { label: "HJ",    description: "Hijack - Fifth player to act preflop. Late position, can steal blinds more often.",                color: "#3b82f6", x: 73, y: 30 },
   { label: "CO",    description: "Cutoff - Second to last to act preflop. Strong position, wide opening range.",                     color: "#16a34a", x: 82, y: 50 },
-  { label: "BTN",   description: "Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range.",       color: "#16a34a", x: 70, y: 76 },
-  { label: "SB",    description: "Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage.",   color: "#7e22ce", x: 50, y: 84 },
-  { label: "BB",    description: "Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage.",              color: "#7e22ce", x: 30, y: 76 },
+  { label: "BTN",   description: "Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range.",       color: "#16a34a", x: 73, y: 74 },
+  { label: "SB",    description: "Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage.",   color: "#7e22ce", x: 50, y: 80 },
+  { label: "BB",    description: "Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage.",              color: "#7e22ce", x: 30, y: 72 },
 ];
 
 export default function TablePosition() {
@@ -75,8 +75,8 @@ export default function TablePosition() {
                   <rect x="38" y="26" width="24" height="5" rx="2.5" fill="rgba(0,0,0,0.2)" />
                   <text x="50" y="29.5" textAnchor="middle" fill="white" fontSize="2.5" fontFamily="sans-serif" letterSpacing="0.5">POSITIONS</text>
                   {/* Dealer button */}
-                  <circle cx="68" cy="43" r="2.5" fill="white" stroke="#fde047" strokeWidth="0.5" />
-                  <text x="68" y="44" textAnchor="middle" fill="black" fontSize="2" fontWeight="bold" fontFamily="sans-serif">D</text>
+                  <circle cx="63" cy="38" r="2.5" fill="white" stroke="#fde047" strokeWidth="0.5" />
+                  <text x="63" y="39" textAnchor="middle" fill="black" fontSize="2" fontWeight="bold" fontFamily="sans-serif">D</text>
                 </svg>
 
                 {/* Position labels as HTML buttons over the SVG */}
