@@ -10,15 +10,15 @@ interface TooltipData {
 }
 
 const positions = [
-  { label: "UTG",   description: "Under the Gun - First player to act preflop. Worst position, play only premium hands.",             color: "#dc2626", x: 8,  y: 50 },
-  { label: "UTG+1", description: "Under the Gun +1 - Second player to act preflop. Early position, play tight.",                     color: "#dc2626", x: 22, y: 18 },
-  { label: "MP",    description: "Middle Position - Third player to act preflop. Can open wider than early position.",                color: "#eab308", x: 38, y: 6  },
-  { label: "MP+1",  description: "Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP.",            color: "#eab308", x: 57, y: 6  },
-  { label: "HJ",    description: "Hijack - Fifth player to act preflop. Late position, can steal blinds more often.",                color: "#3b82f6", x: 73, y: 18 },
-  { label: "CO",    description: "Cutoff - Second to last to act preflop. Strong position, wide opening range.",                     color: "#16a34a", x: 87, y: 50 },
-  { label: "BTN",   description: "Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range.",       color: "#16a34a", x: 73, y: 82 },
-  { label: "SB",    description: "Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage.",   color: "#7e22ce", x: 50, y: 92 },
-  { label: "BB",    description: "Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage.",              color: "#7e22ce", x: 27, y: 82 },
+  { label: "UTG",   description: "Under the Gun - First player to act preflop. Worst position, play only premium hands.",             color: "#dc2626", x: 14, y: 50 },
+  { label: "UTG+1", description: "Under the Gun +1 - Second player to act preflop. Early position, play tight.",                     color: "#dc2626", x: 25, y: 24 },
+  { label: "MP",    description: "Middle Position - Third player to act preflop. Can open wider than early position.",                color: "#eab308", x: 38, y: 13 },
+  { label: "MP+1",  description: "Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP.",            color: "#eab308", x: 57, y: 13 },
+  { label: "HJ",    description: "Hijack - Fifth player to act preflop. Late position, can steal blinds more often.",                color: "#3b82f6", x: 70, y: 24 },
+  { label: "CO",    description: "Cutoff - Second to last to act preflop. Strong position, wide opening range.",                     color: "#16a34a", x: 82, y: 50 },
+  { label: "BTN",   description: "Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range.",       color: "#16a34a", x: 70, y: 76 },
+  { label: "SB",    description: "Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage.",   color: "#7e22ce", x: 50, y: 84 },
+  { label: "BB",    description: "Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage.",              color: "#7e22ce", x: 30, y: 76 },
 ];
 
 export default function TablePosition() {
