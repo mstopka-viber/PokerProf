@@ -30,22 +30,22 @@ export default function TablePosition() {
                 <div className="aspect-[2/1] sm:aspect-[2.2/1] rounded-[30%] sm:rounded-[35%] md:rounded-[40%] overflow-hidden bg-green-700 flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6">
                   <div className="relative w-full h-full">
                     <div className="absolute left-[5%] sm:left-[8%] top-[40%] sm:top-[45%]">
-                      <div className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap">UTG</div>
+                      <div title="Under the Gun - First player to act preflop. Worst position, play only premium hands." className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap cursor-help">UTG</div>
                     </div>
                     <div className="absolute left-[15%] sm:left-[20%] top-[20%] sm:top-[15%]">
-                      <div className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap">UTG+1</div>
+                      <div title="Under the Gun +1 - Second player to act preflop. Early position, play tight." className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap cursor-help">UTG+1</div>
                     </div>
                     <div className="absolute left-[30%] sm:left-[35%] top-[5%] sm:top-[8%]">
-                      <div className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap">MP</div>
+                      <div title="Middle Position - Third player to act preflop. Can open wider than early position." className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap cursor-help">MP</div>
                     </div>
                     <div className="absolute right-[30%] sm:right-[35%] top-[5%] sm:top-[8%]">
-                      <div className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap">MP+1</div>
+                      <div title="Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP." className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap cursor-help">MP+1</div>
                     </div>
                     <div className="absolute right-[15%] sm:right-[20%] top-[20%] sm:top-[15%]">
-                      <div className="bg-blue-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-blue-600 whitespace-nowrap">HJ</div>
+                      <div title="Hijack - Fifth player to act preflop. Late-ish position, can steal blinds more often." className="bg-blue-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-blue-600 whitespace-nowrap cursor-help">HJ</div>
                     </div>
                     <div className="absolute right-[5%] sm:right-[8%] top-[40%] sm:top-[45%]">
-                      <div className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap">CO</div>
+                      <div title="Cutoff - Second to last to act preflop. Strong position, wide opening range." className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap cursor-help">CO</div>
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="flex flex-col items-center">
@@ -54,13 +54,13 @@ export default function TablePosition() {
                       </div>
                     </div>
                     <div className="absolute right-[15%] sm:right-[20%] bottom-[20%] sm:bottom-[15%]">
-                      <div className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap">BTN</div>
+                      <div title="Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range." className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap cursor-help">BTN</div>
                     </div>
                     <div className="absolute left-[15%] sm:left-[20%] bottom-[20%] sm:bottom-[15%]">
-                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">BB</div>
+                      <div title="Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage." className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap cursor-help">BB</div>
                     </div>
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-[5%] sm:bottom-[8%]">
-                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">SB</div>
+                      <div title="Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage." className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap cursor-help">SB</div>
                     </div>
                     <div className="absolute bottom-[8%] sm:bottom-[12%] right-[20%] sm:right-[25%] -translate-x-1/2">
                       <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full bg-white text-black font-bold flex items-center justify-center shadow-sm border border-yellow-300 text-[7px] sm:text-[8px] md:text-xs">D</div>
