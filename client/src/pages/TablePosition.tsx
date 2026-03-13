@@ -57,10 +57,10 @@ export default function TablePosition() {
                       <div className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap">BTN</div>
                     </div>
                     <div className="absolute left-[15%] sm:left-[20%] bottom-[20%] sm:bottom-[15%]">
-                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">SB</div>
+                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">BB</div>
                     </div>
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-[5%] sm:bottom-[8%]">
-                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">BB</div>
+                      <div className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap">SB</div>
                     </div>
                     <div className="absolute bottom-[8%] sm:bottom-[12%] right-[20%] sm:right-[25%] -translate-x-1/2">
                       <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full bg-white text-black font-bold flex items-center justify-center shadow-sm border border-yellow-300 text-[7px] sm:text-[8px] md:text-xs">D</div>
