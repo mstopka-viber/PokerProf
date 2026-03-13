@@ -1,5 +1,73 @@
+import { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+interface DiagramLabelProps {
+  label: string;
+  description: string;
+  colorClass: string;
+  borderClass: string;
+}
+
+function DiagramLabel({ label, description, colorClass, borderClass }: DiagramLabelProps) {
+  const [visible, setVisible] = useState(false);
+  const [pos, setPos] = useState({ top: 0, left: 0 });
+  const ref = useRef<HTMLDivElement>(null);
+
+  const showTooltip = () => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      setPos({ top: rect.top - 8, left: rect.left + rect.width / 2 });
+    }
+    setVisible(true);
+  };
+
+  return (
+    <>
+      <div
+        ref={ref}
+        onMouseEnter={showTooltip}
+        onMouseLeave={() => setVisible(false)}
+        className={`${colorClass} text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold ${borderClass} whitespace-nowrap cursor-help`}
+      >
+        {label}
+      </div>
+      {visible && (
+        <div
+          style={{
+            position: 'fixed',
+            top: pos.top,
+            left: pos.left,
+            transform: 'translate(-50%, -100%)',
+            zIndex: 99999,
+            backgroundColor: '#1f2937',
+            color: '#ffffff',
+            padding: '10px 14px',
+            borderRadius: '8px',
+            maxWidth: '300px',
+            minWidth: '180px',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+            pointerEvents: 'none',
+          }}
+        >
+          <p style={{ fontWeight: 700, marginBottom: '4px', fontSize: '13px', color: '#ffffff' }}>{label}</p>
+          <p style={{ fontSize: '12px', color: '#d1d5db', lineHeight: '1.5', margin: 0 }}>{description}</p>
+          <div style={{
+            position: 'absolute',
+            bottom: '-6px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 0,
+            height: 0,
+            borderLeft: '7px solid transparent',
+            borderRight: '7px solid transparent',
+            borderTop: '7px solid #1f2937',
+          }} />
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function TablePosition() {
   return (
@@ -30,22 +98,22 @@ export default function TablePosition() {
                 <div className="aspect-[2/1] sm:aspect-[2.2/1] rounded-[30%] sm:rounded-[35%] md:rounded-[40%] overflow-hidden bg-green-700 flex items-center justify-center p-2 sm:p-3 md:p-4 lg:p-6">
                   <div className="relative w-full h-full">
                     <div className="absolute left-[5%] sm:left-[8%] top-[40%] sm:top-[45%]">
-                      <div title="Under the Gun - First player to act preflop. Worst position, play only premium hands." className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap cursor-help">UTG</div>
+                      <DiagramLabel label="UTG" description="Under the Gun - First player to act preflop. Worst position, play only premium hands." colorClass="bg-red-600" borderClass="border border-red-700" />
                     </div>
                     <div className="absolute left-[15%] sm:left-[20%] top-[20%] sm:top-[15%]">
-                      <div title="Under the Gun +1 - Second player to act preflop. Early position, play tight." className="bg-red-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-red-700 whitespace-nowrap cursor-help">UTG+1</div>
+                      <DiagramLabel label="UTG+1" description="Under the Gun +1 - Second player to act preflop. Early position, play tight." colorClass="bg-red-600" borderClass="border border-red-700" />
                     </div>
                     <div className="absolute left-[30%] sm:left-[35%] top-[5%] sm:top-[8%]">
-                      <div title="Middle Position - Third player to act preflop. Can open wider than early position." className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap cursor-help">MP</div>
+                      <DiagramLabel label="MP" description="Middle Position - Third player to act preflop. Can open wider than early position." colorClass="bg-yellow-500" borderClass="border border-yellow-600" />
                     </div>
                     <div className="absolute right-[30%] sm:right-[35%] top-[5%] sm:top-[8%]">
-                      <div title="Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP." className="bg-yellow-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-yellow-600 whitespace-nowrap cursor-help">MP+1</div>
+                      <DiagramLabel label="MP+1" description="Middle Position +1 - Fourth player to act preflop. Slightly more flexibility than MP." colorClass="bg-yellow-500" borderClass="border border-yellow-600" />
                     </div>
                     <div className="absolute right-[15%] sm:right-[20%] top-[20%] sm:top-[15%]">
-                      <div title="Hijack - Fifth player to act preflop. Late-ish position, can steal blinds more often." className="bg-blue-500 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-blue-600 whitespace-nowrap cursor-help">HJ</div>
+                      <DiagramLabel label="HJ" description="Hijack - Fifth player to act preflop. Late position, can steal blinds more often." colorClass="bg-blue-500" borderClass="border border-blue-600" />
                     </div>
                     <div className="absolute right-[5%] sm:right-[8%] top-[40%] sm:top-[45%]">
-                      <div title="Cutoff - Second to last to act preflop. Strong position, wide opening range." className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap cursor-help">CO</div>
+                      <DiagramLabel label="CO" description="Cutoff - Second to last to act preflop. Strong position, wide opening range." colorClass="bg-green-600" borderClass="border border-green-700" />
                     </div>
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="flex flex-col items-center">
@@ -54,13 +122,13 @@ export default function TablePosition() {
                       </div>
                     </div>
                     <div className="absolute right-[15%] sm:right-[20%] bottom-[20%] sm:bottom-[15%]">
-                      <div title="Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range." className="bg-green-600 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-green-700 whitespace-nowrap cursor-help">BTN</div>
+                      <DiagramLabel label="BTN" description="Button (Dealer) - Last to act post-flop. Best position at the table, widest opening range." colorClass="bg-green-600" borderClass="border border-green-700" />
                     </div>
                     <div className="absolute left-[15%] sm:left-[20%] bottom-[20%] sm:bottom-[15%]">
-                      <div title="Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage." className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap cursor-help">BB</div>
+                      <DiagramLabel label="BB" description="Big Blind - Posts full minimum bet. Acts second post-flop, positional disadvantage." colorClass="bg-purple-700" borderClass="border border-purple-800" />
                     </div>
                     <div className="absolute left-1/2 -translate-x-1/2 bottom-[5%] sm:bottom-[8%]">
-                      <div title="Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage." className="bg-purple-700 text-white px-1 sm:px-1.5 md:px-2 py-0.5 md:py-1 rounded shadow-sm text-[9px] sm:text-xs md:text-sm font-bold border border-purple-800 whitespace-nowrap cursor-help">SB</div>
+                      <DiagramLabel label="SB" description="Small Blind - Posts half the minimum bet. Acts first post-flop, worst positional disadvantage." colorClass="bg-purple-700" borderClass="border border-purple-800" />
                     </div>
                     <div className="absolute bottom-[8%] sm:bottom-[12%] right-[20%] sm:right-[25%] -translate-x-1/2">
                       <div className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full bg-white text-black font-bold flex items-center justify-center shadow-sm border border-yellow-300 text-[7px] sm:text-[8px] md:text-xs">D</div>
